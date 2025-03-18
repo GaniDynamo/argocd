@@ -5,7 +5,7 @@ metadata:
   labels:  # Fixed typo
     app: dm
 spec:
-  replicas: 7
+  replicas: 2
   selector:
     matchLabels:  # Fixed typo
       app: dm
