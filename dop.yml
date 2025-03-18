@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydop1
+  labels:  # Fixed typo
+    app: dm
+spec:
+  replicas: 7
+  selector:
+    matchLabels:  # Fixed typo
+      app: dm
+  template:
+    metadata:  # Fixed typo
+      labels:  # Fixed typo
+       app: dm
+    spec:
+      containers:
+        - name: cont1
+          image: shammu101/cycle
+          ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysvc1
+spec:
+  type: NodePort
+  selector:
+    app: dm
+  ports:
+    - port: 80  # Fixed typo
+      targetPort: 80
